@@ -19,7 +19,7 @@ public class Main {
      */
     public static void main(String... args) throws IOException {
         List<String> wordmap = new ArrayList<>();
-        for(String s : FileUtils.readLines(new File("C:\\Users\\Stuart Blair\\Desktop\\afilter.txt"))) {
+        for(String s : FileUtils.readLines(new File("data/APSub.txt"))) {
             String[] temp = s.split(" ");
             for(String ss : temp) {
                 if(!wordmap.contains(ss)) {
@@ -28,7 +28,7 @@ public class Main {
             }
         }
 
-        List<String> documents = FileUtils.readLines(new File("C:\\Users\\Stuart Blair\\Desktop\\afilter.txt"));
+        List<String> documents = FileUtils.readLines(new File("data/APSub.txt"));
         for(String s : documents) {
             String[] temp = s.split(" ");
             StringBuilder sb = new StringBuilder();
@@ -39,8 +39,8 @@ public class Main {
                     sb.append(" ");
                 }
             }
-            FileUtils.writeStringToFile(new File("C:\\Users\\Stuart Blair\\Desktop\\BagOfSentences.txt"),"1\n" + sb.toString() + "\n",true);
+            FileUtils.writeStringToFile(new File("data/BagOfSentences.txt"),"1\n" + sb.toString() + "\n",true);
         }
-        FileUtils.writeLines(new File("C:\\Users\\Stuart Blair\\Desktop\\WordList.txt"),wordmap);
+        FileUtils.writeLines(new File("data/WordList.txt"),wordmap);
     }
 }
